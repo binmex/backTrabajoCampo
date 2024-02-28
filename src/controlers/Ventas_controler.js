@@ -85,6 +85,6 @@ exports.addVenta = async (req,res) => {
       message: "se añadio la venta correctamente"
     })
   } catch (er) {
-    return res.status(500).json({ message: "Something goes wrong", error: er});
+    return res.status(500).json({ message: "Something goes wrong", error: er.message()});
   }
 };
