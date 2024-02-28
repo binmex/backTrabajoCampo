@@ -42,7 +42,7 @@ exports.fetchProduct = async (req, res) => {
       return res.status(404).json({ message: "Product not found" });
     }
     const [rows] = await pool.query(
-      "SELECT * FROM StockMovimiento inner join Producto on StockMovimiento.product_id = producto.id_producto WHERE product_id = ?",
+      "SELECT * FROM StockMovimiento inner join Producto on StockMovimiento.product_id = Producto.id_producto WHERE product_id = ?",
       [idFromLabelProduct]
     );
     res.json(rows[0]);
