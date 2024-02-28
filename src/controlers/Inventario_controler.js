@@ -69,7 +69,7 @@ exports.deleteProduct = async (req, res) => {
       return res.send("eliminado")
     }
   } catch (error) {
-    return res.status(500).json({ message: "something goes wrong" });
+    return res.status(500).json({ message: "something goes wrong"+error.message });
   }
 };
 exports.getProduct = async (req, res) => {
